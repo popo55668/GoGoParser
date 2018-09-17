@@ -15009,10 +15009,11 @@ var _moment2 = _interopRequireDefault(_moment);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var parser = new _pdfreader2.default.PdfReader();
-var columnTitles = [{ title: '消費日', x: 0 }, { title: '入帳起息日', x: 0 }, { title: '消費明細', x: 0 }, { title: '新臺幣金額', x: 0 }, { title: '外幣折算日', x: 0 }, { title: '消費地', x: 0 }, { title: '幣別', x: 0 }, { title: '外幣金額', x: 0 }];
 
 var parse = function parse(pdf) {
   return new Promise(function (resolve, reject) {
+    var columnTitles = [{ title: '消費日', x: 0 }, { title: '入帳起息日', x: 0 }, { title: '消費明細', x: 0 }, { title: '新臺幣金額', x: 0 }, { title: '外幣折算日', x: 0 }, { title: '消費地', x: 0 }, { title: '幣別', x: 0 }, { title: '外幣金額', x: 0 }];
+
     var items = [];
     var list = [];
     var fileReader = new FileReader();
@@ -15082,6 +15083,12 @@ var parse = function parse(pdf) {
                 break;
             } // end of switch
           });
+          var isValid = columnTitles.reduce(function (acc, cur) {
+            return acc + cur.x;
+          }, 0);
+          if (isValid === 0) {
+            return reject('No a valid pdf.');
+          }
           var payment = list.shift(); // remove 繳款
           var sum = list.reduce(function (acc, current) {
             return acc + current['新臺幣金額'];
@@ -15100,4 +15107,4 @@ var parse = function parse(pdf) {
 
 exports.parse = parse;
 },{"pdfreader":"6xFo","moment":"iROh"}]},{},["JkCw"], "lib")
-//# sourceMappingURL=/GoGoParser/parse.92c3326d.map
+//# sourceMappingURL=/GoGoParser/parse.05667613.map
