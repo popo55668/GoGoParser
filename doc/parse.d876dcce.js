@@ -103,14 +103,14 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"Hc/8":[function(require,module,exports) {
+})({"jSD1":[function(require,module,exports) {
 module.exports = function isBuffer(arg) {
   return arg && typeof arg === 'object'
     && typeof arg.copy === 'function'
     && typeof arg.fill === 'function'
     && typeof arg.readUInt8 === 'function';
 }
-},{}],"PigS":[function(require,module,exports) {
+},{}],"oxw+":[function(require,module,exports) {
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -135,7 +135,7 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],"kpD3":[function(require,module,exports) {
+},{}],"g5I+":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {};
@@ -322,7 +322,7 @@ process.chdir = function (dir) {
 process.umask = function () {
     return 0;
 };
-},{}],"hhHb":[function(require,module,exports) {
+},{}],"wqTM":[function(require,module,exports) {
 var global = arguments[3];
 var process = require("process");
 // Copyright Joyent, Inc. and other Node contributors.
@@ -869,7 +869,7 @@ exports._extend = function (origin, add) {
 function hasOwnProperty(obj, prop) {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 }
-},{"./support/isBuffer":"Hc/8","inherits":"PigS","process":"kpD3"}],"oSjY":[function(require,module,exports) {
+},{"./support/isBuffer":"jSD1","inherits":"oxw+","process":"g5I+"}],"oSjY":[function(require,module,exports) {
 /**
  * Minimal logger
  * @author Adrien Joly, http://github.com/adrienjoly
@@ -898,7 +898,7 @@ module.exports.toggle = function(enabled){
   return module.exports;
 };
 
-},{"util":"hhHb"}],"JzG9":[function(require,module,exports) {
+},{"util":"wqTM"}],"wIHY":[function(require,module,exports) {
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -1164,7 +1164,7 @@ function isObject(arg) {
 function isUndefined(arg) {
   return arg === void 0;
 }
-},{}],"oZAK":[function(require,module,exports) {
+},{}],"sC8V":[function(require,module,exports) {
 
 },{}],"qPMP":[function(require,module,exports) {
 //     Underscore.js 1.4.4
@@ -4449,7 +4449,7 @@ var PDFUnit = function PFPUnitClosure() {
 }();
 
 module.exports = PDFUnit;
-},{"util":"hhHb","underscore":"qPMP"}],"uOOu":[function(require,module,exports) {
+},{"util":"wqTM","underscore":"qPMP"}],"uOOu":[function(require,module,exports) {
 var nodeUtil = require("util"),
     _ = require("underscore"),
     PDFUnit = require('./pdfunit.js');
@@ -4541,7 +4541,7 @@ var PDFLine = function PFPLineClosure() {
 }();
 
 module.exports = PDFLine;
-},{"util":"hhHb","underscore":"qPMP","./pdfunit.js":"PpE6"}],"NYOO":[function(require,module,exports) {
+},{"util":"wqTM","underscore":"qPMP","./pdfunit.js":"PpE6"}],"NYOO":[function(require,module,exports) {
 var nodeUtil = require("util"),
     _ = require("underscore"),
     PDFUnit = require('./pdfunit.js');
@@ -4600,7 +4600,7 @@ var PDFFill = function PFPLineClosure() {
 }();
 
 module.exports = PDFFill;
-},{"util":"hhHb","underscore":"qPMP","./pdfunit.js":"PpE6"}],"6iLU":[function(require,module,exports) {
+},{"util":"wqTM","underscore":"qPMP","./pdfunit.js":"PpE6"}],"6iLU":[function(require,module,exports) {
 var nodeUtil = require("util"),
     _ = require("underscore"),
     PDFUnit = require('./pdfunit.js');
@@ -4929,7 +4929,7 @@ var PDFFont = function PFPFontClosure() {
 }();
 
 module.exports = PDFFont;
-},{"util":"hhHb","underscore":"qPMP","./pdfunit.js":"PpE6"}],"/Awr":[function(require,module,exports) {
+},{"util":"wqTM","underscore":"qPMP","./pdfunit.js":"PpE6"}],"/Awr":[function(require,module,exports) {
 'use strict';
 
 var nodeUtil = require("util"),
@@ -5521,7 +5521,7 @@ var nodeUtil = require("util"),
     //  CanvasGradient = CanvasGradient_;
     //  CanvasPattern = CanvasPattern_;
 })();
-},{"util":"hhHb","underscore":"qPMP","./pdfline":"uOOu","./pdffill":"NYOO","./pdffont":"6iLU"}],"aaaj":[function(require,module,exports) {
+},{"util":"wqTM","underscore":"qPMP","./pdfline":"uOOu","./pdffill":"NYOO","./pdffont":"6iLU"}],"aaaj":[function(require,module,exports) {
 var nodeUtil = require("util"),
     _ = require("underscore"),
     PDFUnit = require('./pdfunit.js');
@@ -5824,7 +5824,7 @@ var PDFField = function PDFFieldClosure() {
 }();
 
 module.exports = PDFField;
-},{"util":"hhHb","underscore":"qPMP","./pdfunit.js":"PpE6"}],"B1Sq":[function(require,module,exports) {
+},{"util":"wqTM","underscore":"qPMP","./pdfunit.js":"PpE6"}],"B1Sq":[function(require,module,exports) {
 var nodeUtil = require("util"),
     _ = require("underscore"),
     PDFUnit = require('./pdfunit.js');
@@ -6021,7 +6021,7 @@ var PDFAnno = function PDFAnnoClosure() {
 }();
 
 module.exports = PDFAnno;
-},{"util":"hhHb","underscore":"qPMP","./pdfunit.js":"PpE6"}],"prL8":[function(require,module,exports) {
+},{"util":"wqTM","underscore":"qPMP","./pdfunit.js":"PpE6"}],"FRly":[function(require,module,exports) {
 'use strict'
 
 exports.byteLength = byteLength
@@ -6174,7 +6174,7 @@ function fromByteArray (uint8) {
   return parts.join('')
 }
 
-},{}],"iism":[function(require,module,exports) {
+},{}],"Quj6":[function(require,module,exports) {
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
   var eLen = (nBytes * 8) - mLen - 1
@@ -6260,14 +6260,14 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],"2BOv":[function(require,module,exports) {
+},{}],"aq/z":[function(require,module,exports) {
 var toString = {}.toString;
 
 module.exports = Array.isArray || function (arr) {
   return toString.call(arr) == '[object Array]';
 };
 
-},{}],"XyCw":[function(require,module,exports) {
+},{}],"aMB2":[function(require,module,exports) {
 
 var global = arguments[3];
 /*!
@@ -8060,7 +8060,7 @@ function isnan (val) {
   return val !== val // eslint-disable-line no-self-compare
 }
 
-},{"base64-js":"prL8","ieee754":"iism","isarray":"2BOv","buffer":"XyCw"}],"4pRp":[function(require,module,exports) {
+},{"base64-js":"FRly","ieee754":"Quj6","isarray":"aq/z","buffer":"aMB2"}],"4pRp":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 ////////////////////////////////start of fake image
 var PDFImage = function () {
@@ -8096,7 +8096,7 @@ var PDFImage = function () {
 };
 
 module.exports = PDFImage;
-},{"buffer":"XyCw"}],"QoxM":[function(require,module,exports) {
+},{"buffer":"aMB2"}],"QoxM":[function(require,module,exports) {
 module.exports = {
   "_from": "pdf2json@^0.7.1",
   "_id": "pdf2json@0.7.1",
@@ -8254,7 +8254,7 @@ var PTIXmlParser = function () {
 }();
 
 module.exports = PTIXmlParser;
-},{"util":"hhHb","events":"JzG9","fs":"oZAK","underscore":"qPMP","xmldom":"invh","./pdfcanvas.js":"/Awr","./pdfunit.js":"PpE6","./pdffield.js":"aaaj","./pdfanno.js":"B1Sq","./pdfimage.js":"4pRp","../package.json":"QoxM"}],"sCE7":[function(require,module,exports) {
+},{"util":"wqTM","events":"wIHY","fs":"sC8V","underscore":"qPMP","xmldom":"invh","./pdfcanvas.js":"/Awr","./pdfunit.js":"PpE6","./pdffield.js":"aaaj","./pdfanno.js":"B1Sq","./pdfimage.js":"4pRp","../package.json":"QoxM"}],"sCE7":[function(require,module,exports) {
 var process = require("process");
 var nodeUtil = require("util"),
     nodeEvents = require("events"),
@@ -8652,7 +8652,7 @@ var PDFJSClass = function () {
 
 module.exports = PDFJSClass;
 ////////////////////////////////End of Node.js Module
-},{"util":"hhHb","events":"JzG9","fs":"oZAK","underscore":"qPMP","xmldom":"invh","./pdfcanvas.js":"/Awr","./pdfunit.js":"PpE6","./pdffield.js":"aaaj","./pdfanno.js":"B1Sq","./pdfimage.js":"4pRp","../package.json":"QoxM","./ptixmlinject":"HB2W","process":"kpD3"}],"H1LZ":[function(require,module,exports) {
+},{"util":"wqTM","events":"wIHY","fs":"sC8V","underscore":"qPMP","xmldom":"invh","./pdfcanvas.js":"/Awr","./pdfunit.js":"PpE6","./pdffield.js":"aaaj","./pdfanno.js":"B1Sq","./pdfimage.js":"4pRp","../package.json":"QoxM","./ptixmlinject":"HB2W","process":"g5I+"}],"H1LZ":[function(require,module,exports) {
 var process = require("process");
 var define;
 /*global setImmediate: false, setTimeout: false, console: false */
@@ -9638,7 +9638,7 @@ var define;
 
 }());
 
-},{"process":"kpD3"}],"Rpbq":[function(require,module,exports) {
+},{"process":"g5I+"}],"Rpbq":[function(require,module,exports) {
 var PDFJS = require("./lib/pdf.js"),
     nodeUtil = require("util"),
     nodeEvents = require("events"),
@@ -9795,7 +9795,7 @@ var PDFParser = function () {
 }();
 
 module.exports = PDFParser;
-},{"./lib/pdf.js":"sCE7","util":"hhHb","events":"JzG9","underscore":"qPMP","fs":"oZAK","async":"H1LZ"}],"qfWT":[function(require,module,exports) {
+},{"./lib/pdf.js":"sCE7","util":"wqTM","events":"wIHY","underscore":"qPMP","fs":"sC8V","async":"H1LZ"}],"qfWT":[function(require,module,exports) {
 /**
  * PdfReader: class that reads a PDF file, and calls a function on each item found while parsing that file.
  * @author Adrien Joly, http://github.com/adrienjoly
@@ -15100,4 +15100,4 @@ var parse = function parse(pdf) {
 
 exports.parse = parse;
 },{"pdfreader":"6xFo","moment":"iROh"}]},{},["JkCw"], "lib")
-//# sourceMappingURL=/parse.37e91bde.map
+//# sourceMappingURL=/GoGoParser/parse.92c3326d.map
