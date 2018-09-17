@@ -1,0 +1,27 @@
+{
+  "name": "gogoparser",
+  "version": "1.0.0",
+  "description": "Parse TaiShin @gogo creditcard billing statement",
+  "main": "index.js",
+  "scripts": {
+    "watch": "./patch.sh && NODE_ENV=development parcel --global lib --https --open index.html ",
+    "build": "NODE_ENV=production parcel build index.html --global lib --no-minify --public-url ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/popo55668/GoGoParser.git"
+  },
+  "author": "Li-Wei Wang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/popo55668/GoGoParser/issues"
+  },
+  "homepage": "https://github.com/popo55668/GoGoParser#readme",
+  "dependencies": {
+    "moment": "^2.22.2",
+    "pdfreader": "^0.2.5"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.9.7"
+  }
+}
