@@ -1,17 +1,18 @@
 import pdfreader from 'pdfreader';
 import moment from 'moment';
 const parser = new pdfreader.PdfReader();
-var columnTitles = [
-  { title: '消費日', x: 0  }, 
-  { title: '入帳起息日', x: 0 }, 
-  { title: '消費明細', x: 0 },
-  { title: '新臺幣金額', x: 0 },
-  { title: '外幣折算日', x: 0 },
-  { title: '消費地', x: 0 }, 
-  { title: '幣別', x: 0 },
-  { title: '外幣金額', x: 0 }];
 
 const parse = pdf => new Promise((resolve, reject) => {
+  var columnTitles = [
+    { title: '消費日', x: 0  }, 
+    { title: '入帳起息日', x: 0 }, 
+    { title: '消費明細', x: 0 },
+    { title: '新臺幣金額', x: 0 },
+    { title: '外幣折算日', x: 0 },
+    { title: '消費地', x: 0 }, 
+    { title: '幣別', x: 0 },
+    { title: '外幣金額', x: 0 }];
+
   var items = [];
   var list = [];
   var fileReader = new FileReader();
@@ -82,6 +83,10 @@ const parse = pdf => new Promise((resolve, reject) => {
               break;
           } // end of switch
         });
+        const isValid = columnTitles.reduce((acc, cur) => acc + cur.x, 0);
+        if (isValid === 0) {
+          return reject('No a valid pdf.');
+        }
         const payment = list.shift(); // remove 繳款
         const sum = list.reduce((acc, current) => acc + current['新臺幣金額'], 0);
         console.log('Billing total: ' + sum);
