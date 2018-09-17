@@ -1,1 +1,40 @@
-<html> <head> <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> </head> <body> <div id="root" style="margin:auto;width:50%;text-align:center"> <img id="pdf" style="width:10%;display:block;margin-left:auto;margin-right:auto"> <input type="file" onchange="onChange(event)" class="text-center" accept="application/pdf" style="margin:auto;height:50px"> </div> <script src="/parse.788ec8ff.js"></script> <script>function onChange(e){var o=e.target.files[0];lib.parse(o).then(e=>{console.log(e);var a="",t=[];Object.keys(e.items[0]).forEach(e=>{a+=e,a+=",",t.push(e)}),a+="\n",e.items.forEach(e=>{t.forEach(o=>{a+=e[o],a+=","}),a+="\n"});var n=document.createElement("a");if(void 0!==n.download){var c="data:text/csv,"+a.replace(/\n/g,"%0A");n.href=c,n.download=o.name.replace(/pdf/,"csv"),n.text="Click to download",document.getElementById("root").appendChild(n)}}).catch(e=>{console.log(e)})}</script> </body> </html>
+<html>
+<head>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+  <div id="root" style="margin: auto; width: 50%;text-align:center">
+    <img id="pdf" style="width:10%;display:block;margin-left:auto;margin-right:auto">
+    <input type="file" onchange="javascript:onChange(event)" class="text-center" accept="application/pdf" style="margin:auto;height:50px">
+  </div>
+  <script src="/parse.1a8117ce.js"></script>
+  <script>
+    function onChange(event) {
+      var files = event.target.files;
+      var pdf = files[0];
+      lib.parse(pdf).then(result => {
+        console.log(result);
+        var csv = '';
+        var columns = [];
+        Object.keys(result.items[0]).forEach(key => { csv += key; csv += ','; columns.push(key); });
+        csv += '\n';
+        result.items.forEach(row => {
+          columns.forEach(col => { csv += row[col]; csv += ','; })
+          csv += '\n';
+        });
+        var a = document.createElement('a');
+        if (a.download !== undefined) {
+          var href = 'data:text/csv,' + csv.replace(/\n/g, '%0A');
+          a.href = href;
+          a.download = pdf.name.replace(/pdf/,'csv');
+          a.text = 'Click to download'; 
+          document.getElementById("root").appendChild(a);
+        } else {
+        }
+      }).catch(err => {
+        console.log(err);
+      });
+    }
+  </script>
+</body>
+</html>
