@@ -15017,6 +15017,9 @@ var parse = function parse(pdf) {
     var items = [];
     var list = [];
     var fileReader = new FileReader();
+    fileReader.onerror = function (event) {
+      reject('不支援此瀏覽器');
+    };
     fileReader.onload = function (event) {
       parser.parseBuffer(event.target.result, function (err, obj) {
         if (err) {
@@ -15106,4 +15109,4 @@ var parse = function parse(pdf) {
 
 exports.parse = parse;
 },{"pdfreader":"6xFo","moment":"iROh"}]},{},["JkCw"], "lib")
-//# sourceMappingURL=/GoGoParser/parse.2a9f8ec0.map
+//# sourceMappingURL=/GoGoParser/parse.d97a7b35.map

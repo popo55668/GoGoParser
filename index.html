@@ -6,7 +6,6 @@
 <head>
 	<meta charset="utf-8">
 	<title>Convert @GOGO Billing</title>
-	<link rel="canonical" href="https://css-tricks.com/examples/DragAndDropFileUploading/">
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,400" />
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -261,6 +260,7 @@
 		<div class="box__success">Done! <a class="box__restart" role="button">Process more?</a></div>
 		<div class="box__error">Error! <span></span>. <a href="https://css-tricks.com/examples/DragAndDropFileUploading//?" class="box__restart" role="button">Try again!</a></div>
 	</form>
+  <br><span>All computations are at browser, no worry about your privacy<strong style="color:red">&nbsp;&hearts;</strong></span>
 </div>
 <script src="./src/parse.js"></script>
 <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
@@ -288,6 +288,7 @@
 					label.textContent = files.length > 1 ? ( input.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', files.length ) : files[ 0 ].name;
 				  form.classList.add( 'is-uploading' );
 					form.classList.remove( 'is-error', 'is-success' );
+          console.log(files);
           Promise.all(Object.keys(files).map(key => lib.parse(files[key]))).then(results => {
             console.log('Completed.');
             form.classList.add('is-success' );
@@ -303,7 +304,7 @@
             form.classList.remove('is-success' );
 						form.classList.remove( 'is-uploading' );
             form.classList.add('is-error');
-            errorMsg.textContent = '無法處理一個或多個檔案';
+            errorMsg.textContent = '無法處理或瀏覽器不支援';
             console.log(err);
           });
 				};

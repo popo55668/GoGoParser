@@ -16,6 +16,9 @@ const parse = pdf => new Promise((resolve, reject) => {
   var items = [];
   var list = [];
   var fileReader = new FileReader();
+  fileReader.onerror = function(event) {
+    reject('不支援此瀏覽器');
+  }
   fileReader.onload = function(event) {
     parser.parseBuffer(event.target.result, (err, obj) => {
       if (err) {
