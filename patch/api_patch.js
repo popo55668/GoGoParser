@@ -61,7 +61,7 @@ PDFJS.disableWorker = PDFJS.disableWorker === undefined ?
  * loaded based on the location of the pdf.js file.
  * @var {String}
  */
-PDFJS.workerSrc = PDFJS.workerSrc === undefined ? '//mozilla.github.io/pdf.js/build/pdf.worker.js' : PDFJS.workerSrc;
+PDFJS.workerSrc = PDFJS.workerSrc === undefined ? 'https://mozilla.github.io/pdf.js/build/pdf.worker.js' : PDFJS.workerSrc;
 
 /**
  * Disable range request loading of PDF files. When enabled and if the server

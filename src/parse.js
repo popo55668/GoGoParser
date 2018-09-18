@@ -16,8 +16,8 @@ const parse = pdf => new Promise((resolve, reject) => {
   var items = [];
   var list = [];
   var fileReader = new FileReader();
-  fileReader.onload = function() {
-    parser.parseBuffer(this.result, (err, obj) => {
+  fileReader.onload = function(event) {
+    parser.parseBuffer(event.target.result, (err, obj) => {
       if (err) {
         reject(err);
       } else if (!obj) {
