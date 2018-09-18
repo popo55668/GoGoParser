@@ -15061,17 +15061,16 @@ var parse = function parse(pdf) {
                   } else {
                     isGoodRow = true;
                     list.push({ '消費日': '', '入帳起息日': '', '消費明細': '', '新臺幣金額': 0,
-                      '外幣折算日': '', '消費地': '', '幣別': '', '外幣金額': 0, 'ts': 0, 'refund': false });
+                      '外幣折算日': '', '消費地': '', '幣別': '', '外幣金額': 0 });
                     var date = ad + item.text.substr(3);
                     list[list.length - 1]['消費日'] += date;
-                    list[list.length - 1]['ts'] = _moment2.default.utc(date, 'YYYY/MM/DD').subtract(8, 'hours'); // Assume GMT+8
+                    //list[list.length-1]['ts'] = moment.utc(date, 'YYYY/MM/DD').subtract(8, 'hours'); // Assume GMT+8
                   }
                 } else if (isGoodRow) {
                   for (var i = columnTitles.length - 1; i > 0; i--) {
                     if (columnTitles[i].x <= item.x) {
                       if (i === 3 || i === 7) {
                         var value = parseInt(item.text.replace(/,/, ''));
-                        if (value < 0) list[list.length - 1]['refund'] = true;
                         if (isNaN(value)) console.error('Not a number: ' + item.text);else list[list.length - 1][columnTitles[i].title] += value;
                       } else {
                         list[list.length - 1][columnTitles[i].title] += item.text;
@@ -15093,12 +15092,12 @@ var parse = function parse(pdf) {
           var sum = list.reduce(function (acc, current) {
             return acc + current['新臺幣金額'];
           }, 0);
-          console.log('Billing total: ' + sum);
-          console.log('Expected: ' + checksum);
-          resolve({ payment: payment, items: list, checksum: checksum, sum: sum });
+          console.log('Parsed billing sum: ' + sum);
+          console.log('Expected billing sum: ' + checksum);
+          resolve({ payment: payment, items: list, checksum: checksum, sum: sum, name: pdf.name });
         } else if (obj.text) {
           items.push(obj);
-        }
+        };
       });
     };
     fileReader.readAsArrayBuffer(pdf);
@@ -15107,4 +15106,4 @@ var parse = function parse(pdf) {
 
 exports.parse = parse;
 },{"pdfreader":"6xFo","moment":"iROh"}]},{},["JkCw"], "lib")
-//# sourceMappingURL=/GoGoParser/parse.05667613.map
+//# sourceMappingURL=/GoGoParser/parse.0d5e3313.map

@@ -4,7 +4,7 @@
   "description": "Parse TaiShin @gogo creditcard billing statement",
   "main": "index.js",
   "scripts": {
-    "watch": "./patch.sh && NODE_ENV=development parcel --global lib --open index.html",
+    "watch": "./patch.sh && NODE_ENV=development parcel index.html --global lib --open",
     "build": "NODE_ENV=production parcel build index.html --global lib --no-minify -d ./docs --public-url /GoGoParser"
   },
   "repository": {
